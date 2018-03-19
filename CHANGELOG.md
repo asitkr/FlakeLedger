@@ -26,3 +26,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `docs/FORMAT.md` as the written contract for the JUnit input and the report.
 - Deterministic JSON report with a fixed key order.
 
+## [0.9.0] - 2025-03-25
+
+### Added
+
+- Quarantine suggestions with the evidence runs that support them.
