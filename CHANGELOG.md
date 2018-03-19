@@ -31,3 +31,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - Quarantine suggestions with the evidence runs that support them.
+- `--min-runs` so a single failing run never earns the flaky label.
+
+## [0.7.0] - 2024-06-18
+
