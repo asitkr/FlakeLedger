@@ -35,3 +35,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [0.7.0] - 2024-06-18
 
+### Added
+
+- The cost model: retry minutes and runner minutes attributed per test.
+- Ranked report ordered by flake tax, not by raw failure count.
+
