@@ -40,3 +40,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - The cost model: retry minutes and runner minutes attributed per test.
 - Ranked report ordered by flake tax, not by raw failure count.
 
+## [0.6.0] - 2023-11-07
+
+### Added
+
+- JSON report: `report --format json` with stable key order.
