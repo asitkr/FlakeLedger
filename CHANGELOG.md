@@ -45,3 +45,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - JSON report: `report --format json` with stable key order.
+- Line numbers on every parse error instead of aborting the run.
+
+## [0.5.0] - 2022-09-27
+
+### Added
