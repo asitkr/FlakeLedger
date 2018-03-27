@@ -50,3 +50,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [0.5.0] - 2022-09-27
 
 ### Added
+
+- Classification rules: flaky, broken and undetermined, with the undetermined
+  case refusing to guess.
+- A worked run over the bundled samples.
+
