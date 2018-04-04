@@ -55,3 +55,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   case refusing to guess.
 - A worked run over the bundled samples.
 
+## [0.4.0] - 2021-10-12
+
+### Added
+
+- Run grouping by test id across attempts and suites.
