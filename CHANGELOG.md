@@ -60,3 +60,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - Run grouping by test id across attempts and suites.
+- Attempt numbers surfaced in the report so a rerun is visible.
+
+## [0.3.0] - 2020-11-24
+
+### Added
