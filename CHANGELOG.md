@@ -65,3 +65,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [0.3.0] - 2020-11-24
 
 ### Added
+
+- JUnit XML parser with strict validation for ids, times and outcomes.
+- `classify` subcommand and the first report shape.
+
+## [0.2.0] - 2019-09-17
