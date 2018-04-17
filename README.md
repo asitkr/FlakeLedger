@@ -510,4 +510,4 @@ Possible directions, without dates or promises:
 
 MIT. See [LICENSE](LICENSE).
 
-<!-- draft note 7 -->
+<!-- draft note 8 -->
