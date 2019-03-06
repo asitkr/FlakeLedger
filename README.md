@@ -49,3 +49,15 @@ The four labels, and the exact rule behind each:
 | genuine_failure | every attempt failed, same commit | the failure reproduces, so it is real |
 | stable | every attempt passed or skipped, no failure | nothing to act on |
 | undetermined | failed on its only attempt for that commit | one observation, no rerun to compare against |
+
+The comparison is always within a single commit. flakeledger never compares a
+failure on commit A against a pass on commit B and calls the difference a flake,
+because the code changed between those commits, so a differing outcome is
+expected. Holding the commit constant is what makes the judgement sound, and the
+design decisions section explains why that boundary is the unit.
+
+## The undetermined case and why it refuses to guess
+
+The hard case is a test that failed and was never re-run for that commit. With a
+single observation there is no second attempt to compare against, so the data
+cannot distinguish a flake from a genuine failure. A tool that guessed here
