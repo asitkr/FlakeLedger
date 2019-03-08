@@ -87,3 +87,15 @@ data does not decide.
 python -m pip install -e .
 ```
 
+Or run without installing by putting the sources on the path:
+
+```
+set PYTHONPATH=src
+python -m flakeledger version
+```
+
+That prints `flakeledger 0.1.0` and exits clean.
+
+## Commands
+
+| Command | What it does |
