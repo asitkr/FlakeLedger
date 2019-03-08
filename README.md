@@ -61,3 +61,16 @@ design decisions section explains why that boundary is the unit.
 The hard case is a test that failed and was never re-run for that commit. With a
 single observation there is no second attempt to compare against, so the data
 cannot distinguish a flake from a genuine failure. A tool that guessed here
+would be inventing a fact it does not have.
+
+flakeledger refuses to guess. By default a single failing attempt is labelled
+`undetermined`, and that label is a finding in its own right: it tells you the
+data is insufficient, not that the test is fine. If you want a decision anyway,
+you choose the rule explicitly with `--single-fail-policy`, and the chosen
+policy is printed at the top of the output so the decision is never hidden:
+
+| Policy value | Effect on a single failing attempt |
+|--------------|------------------------------------|
+| `undetermined` (default) | labelled undetermined, refuses to guess |
+| `genuine` | labelled genuine_failure, a conservative flake hunt |
+| `flake` | labelled flake, assumes a retry would have cleared it |
