@@ -125,3 +125,15 @@ Nothing here is a universal truth.
 |-----------|---------|------|---------------|
 | `--compute-rate-per-minute` | 0.008 | currency per compute minute | money cost of one CI compute minute |
 | `--dev-rate-per-minute` | 1.50 | currency per developer minute | money cost of one developer minute |
+| `--dev-wait-minutes-per-flaky-event` | 15.0 | developer minutes per event | time one flaky event burns while someone waits on and re-triggers a red pipeline |
+| `--currency` | USD | label only | text printed next to figures, no conversion |
+
+How to get real values: divide a CI invoice by the compute minutes it billed for
+the compute rate, use a loaded engineering cost per minute for the developer
+rate, and estimate the wait minutes from how long your team loses to one red
+pipeline. All three are knobs; change them and every figure moves, because
+nothing is hardcoded inside the formula.
+
+Wasted compute is the flaky test's own mean runtime times the rerun attempts
+beyond the first, summed over every commit where it flaked, then valued at the
+compute rate. Developer wait cost is `dev-wait-minutes-per-flaky-event` minutes
