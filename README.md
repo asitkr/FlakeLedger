@@ -112,3 +112,16 @@ a file is used as itself. Nonexistent paths are ignored, and if the whole input
 set resolves to no XML files the command exits with a usage error rather than
 crashing on a missing file.
 
+`classify` and `cost` also accept `--single-fail-policy`. `cost` additionally
+accepts the three rate flags and a `--currency` label described next.
+
+## The cost model
+
+Every rate is an input, not a fact. The defaults exist so a run produces
+numbers, but they are placeholders for values you should measure yourself.
+Nothing here is a universal truth.
+
+| Rate flag | Default | Unit | What it means |
+|-----------|---------|------|---------------|
+| `--compute-rate-per-minute` | 0.008 | currency per compute minute | money cost of one CI compute minute |
+| `--dev-rate-per-minute` | 1.50 | currency per developer minute | money cost of one developer minute |
