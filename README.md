@@ -150,3 +150,16 @@ only the part it can measure and states plainly that the real number is higher.
 
 The `samples/` directory holds hand authored JUnit fixtures spanning four
 commits with reruns. The three stages below are a single run of the pipeline
+over those files, ingest to classify to cost, captured verbatim.
+
+Ingest lists every case result. Command:
+
+```
+python -m flakeledger ingest samples
+```
+
+```
+cases 25
+commits 4
+commit 99aa88
+commit a1b2c3
