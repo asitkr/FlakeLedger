@@ -201,3 +201,16 @@ class tests.reports.test_export.test_pdf_header @ d4e5f6 genuine_failure attempt
 ```
 
 Cost charges only the flakes and ranks them. Command:
+
+```
+python -m flakeledger cost samples
+```
+
+```
+rates:
+  compute_rate_per_minute 0.0080 USD/min
+  dev_rate_per_minute 1.5000 USD/min
+  dev_wait_minutes_per_flaky_event 15.00 min
+
+ranked flaky test cost (highest first):
+  1. tests.payments.test_checkout.test_apply_coupon
