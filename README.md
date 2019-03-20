@@ -252,3 +252,15 @@ most under your rates. Read each row as a decision, not just a number:
 
 A `genuine_failure` is a different action: it is a real bug that reproduces, so
 it belongs in the normal bug queue, not the flake queue. An `undetermined` row
+means re-run that commit for a second observation before deciding anything.
+
+## The flake tax asset
+
+The chart below is the `cost` ranking above drawn to scale, the same two tests
+and totals, built from the numbers the `cost` command printed on the samples so
+it moves only if those numbers move. It is the single picture to put in front of
+whoever decides where engineering time goes.
+
+![Horizontal bar chart ranking test_apply_coupon at 45.00 USD and test_replica_catchup at 22.50 USD by total attributed cost](docs/assets/flake-tax.svg)
+
+## JUnit input expectations
