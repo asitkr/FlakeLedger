@@ -226,3 +226,16 @@ total flaky cost 67.5008 USD
 Follow one test through all three stages. In ingest, `test_apply_coupon` on
 commit a1b2c3 is `failed` on attempt 1 (0.812s) and `passed` on attempt 2
 (0.788s). In classify that commit becomes one `flake` row, because one commit
+produced both a pass and a failure. In cost the coupon test carries two flaky
+events (a1b2c3 and d4e5f6), charged 2 events of developer wait, 30 minutes at
+1.50 USD, the 45.00 USD dominating its total.
+
+Note that `test_replica_catchup` flaked on only one commit yet its compute waste
+(0.075 min) is larger than the coupon test's (0.028 min): it runs about 4.5
+seconds per attempt against under a second, so a single rerun costs more compute.
+The coupon test still ranks first on total cost because it flaked on two commits,
+doubling its developer wait charge. That charge dwarfs the compute charge at the
+default rates, which is the model's honest shape: waiting humans cost far more
+than a rerun minute.
+
+## Reading the ranked report and what action each row should trigger
