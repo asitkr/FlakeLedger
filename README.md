@@ -264,3 +264,16 @@ whoever decides where engineering time goes.
 ![Horizontal bar chart ranking test_apply_coupon at 45.00 USD and test_replica_catchup at 22.50 USD by total attributed cost](docs/assets/flake-tax.svg)
 
 ## JUnit input expectations
+
+flakeledger reads the common JUnit schema produced by pytest, Gradle, Maven
+Surefire, and similar tools: a `testsuites` root, or a single `testsuite`,
+containing `testcase` elements. Each `testcase` carries its outcome in a child
+element:
+
+| Child element | Outcome recorded |
+|---------------|------------------|
+| `<failure>` or `<error>` | failed |
+| `<skipped>` | skipped |
+| no child element | passed |
+
+Runtime is read from the `time` attribute in seconds. If a producer omits it,
