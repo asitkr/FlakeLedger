@@ -214,3 +214,15 @@ rates:
 
 ranked flaky test cost (highest first):
   1. tests.payments.test_checkout.test_apply_coupon
+     events=2 wasted_compute=0.028min dev_wait=30.0min
+     compute_cost=0.0002 USD dev_cost=45.0000 USD total=45.0002 USD
+  2. tests.integration.test_sync.test_replica_catchup
+     events=1 wasted_compute=0.075min dev_wait=15.0min
+     compute_cost=0.0006 USD dev_cost=22.5000 USD total=22.5006 USD
+
+total flaky cost 67.5008 USD
+```
+
+Follow one test through all three stages. In ingest, `test_apply_coupon` on
+commit a1b2c3 is `failed` on attempt 1 (0.812s) and `passed` on attempt 2
+(0.788s). In classify that commit becomes one `flake` row, because one commit
