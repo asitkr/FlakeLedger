@@ -239,3 +239,16 @@ default rates, which is the model's honest shape: waiting humans cost far more
 than a rerun minute.
 
 ## Reading the ranked report and what action each row should trigger
+
+The `cost` report is ordered highest total first, so the top row costs you the
+most under your rates. Read each row as a decision, not just a number:
+
+| What you see in a row | What it means | Action it should trigger |
+|-----------------------|---------------|--------------------------|
+| high `dev_wait` and high `events` | the test flakes often across many commits | fix or quarantine it first, it interrupts the most people |
+| high `wasted_compute` but few `events` | the test is slow and flaky, though rare | worth fixing if compute is your constraint, since one rerun is expensive |
+| a test near the top you do not recognise | a costly flake nobody owns | assign an owner before it keeps taxing everyone |
+| the `total flaky cost` line | the sum the flakes cost you under these rates | the size of the case for spending time on the top rows |
+
+A `genuine_failure` is a different action: it is a real bug that reproduces, so
+it belongs in the normal bug queue, not the flake queue. An `undetermined` row
