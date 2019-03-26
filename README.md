@@ -303,3 +303,15 @@ Style two, `<property>` entries inside a `<testsuites>` wrapper (see
       <property name="attempt" value="1"/>
     </properties>
   </testsuite>
+</testsuites>
+```
+
+When both markers are absent, flakeledger falls back to documented defaults
+(`commit=unknown-commit`, `attempt=1`) and records a warning rather than
+guessing silently. The `attempt` value defaults to 1 for the first run and rises
+for each rerun of the same commit.
+
+## Output format
+
+All output is line oriented plain text so two runs diff cleanly in git. The
+fields per command are a contract:
