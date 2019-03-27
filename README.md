@@ -341,3 +341,15 @@ fields per command are a contract:
 |------|---------|
 | 0 | clean, no findings |
 | 1 | findings present (a flake, a genuine failure, or an undetermined case) |
+| 2 | usage error, such as no XML files found in the given inputs |
+
+`version` and `ingest` always exit 0 on success. `classify` exits 1 when any
+flake, genuine failure, or undetermined case exists. `cost` exits 1 when at
+least one test was charged. This makes the tool usable as a CI gate.
+
+## Using it in CI
+
+Add a step after your test runs that points `cost` (or `classify`) at the
+directory of collected JUnit XML. A non-zero exit fails the step, which is how
+you turn a growing flake bill into something the pipeline notices:
+
