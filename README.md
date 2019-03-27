@@ -328,3 +328,16 @@ fields per command are a contract:
 | classify | `attempts=<n>` | how many rerun attempts were seen |
 | classify | `pass= fail= skip=` | outcome counts across those attempts |
 | classify | `(<reason>)` | the plain language rule that produced the label |
+| cost | `events=<n>` | commits where the test flaked |
+| cost | `wasted_compute=<m>min` | summed rerun runtime attributed as waste |
+| cost | `dev_wait=<m>min` | summed developer wait minutes |
+| cost | `compute_cost` | wasted compute valued at the compute rate |
+| cost | `dev_cost` | developer wait valued at the developer rate |
+| cost | `total` | the sum of the two, the ranking key |
+
+## Exit codes
+
+| Code | Meaning |
+|------|---------|
+| 0 | clean, no findings |
+| 1 | findings present (a flake, a genuine failure, or an undetermined case) |
