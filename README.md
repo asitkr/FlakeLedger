@@ -353,3 +353,16 @@ Add a step after your test runs that points `cost` (or `classify`) at the
 directory of collected JUnit XML. A non-zero exit fails the step, which is how
 you turn a growing flake bill into something the pipeline notices:
 
+```
+set PYTHONPATH=src
+python -m flakeledger cost path/to/junit-xml
+```
+
+Because the output is deterministic and line oriented, you can commit a report
+and diff two runs to see whether a flake was fixed or a new one appeared. Sort
+order is stable (by total cost then test id for `cost`, by test id then commit
+for `classify`), so a diff shows only real changes, not reordering noise.
+
+## Limitations
+
+The honest limits of the tool, kept and expanded:
