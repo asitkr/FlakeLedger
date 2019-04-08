@@ -366,3 +366,16 @@ for `classify`), so a diff shows only real changes, not reordering noise.
 ## Limitations
 
 The honest limits of the tool, kept and expanded:
+
+- The cost is an estimate built on declared rates, not a measurement of money
+  that left an account. Every figure is only as good as the three rates you
+  supply, and the defaults are placeholders, not your real costs. Treat the
+  total as the output of a model whose inputs you own.
+- The compute figure counts only the flaky test's own runtime. In real CI a
+  flake usually forces a rerun of a whole job, so the true compute waste is
+  larger than reported. This is a deliberate lower bound, because job
+  composition is not in the JUnit data and flakeledger will not guess it.
+- The developer wait figure is a flat per event estimate, not a measurement of
+  any real person's time. Treat it as a knob, not a fact.
+- Runtimes come from the `time` attribute in the XML. If a producer omits it,
+  that test contributes zero compute waste, which understates the cost of slow
