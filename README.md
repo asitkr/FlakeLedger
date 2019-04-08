@@ -379,3 +379,15 @@ The honest limits of the tool, kept and expanded:
   any real person's time. Treat it as a knob, not a fact.
 - Runtimes come from the `time` attribute in the XML. If a producer omits it,
   that test contributes zero compute waste, which understates the cost of slow
+  flakes that do not report timing.
+- It does not run your tests or trigger reruns. It reads XML that already
+  exists.
+- It does not detect flakes within a single attempt. It needs at least two
+  attempts of the same commit to see a differing outcome, which is why the
+  single failing attempt is undetermined by default.
+- It does not model whole job rerun cost, cross test interference, or queueing
+  delay.
+- It does not read vendor specific fields beyond the common JUnit schema plus
+  the `commit` and `attempt` markers.
+
+## Design decisions
