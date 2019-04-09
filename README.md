@@ -404,3 +404,16 @@ from real regressions, so the commit boundary is the unit and the tool never
 crosses it.
 
 Undetermined is the default for a single failing attempt. The alternative was to
+pick a side automatically, either assuming a retry would have passed (flake) or
+assuming the failure was real (genuine). Both were rejected as dishonest
+defaults: with one observation the data genuinely does not decide, and silently
+choosing either way would either inflate the flake bill with broken tests or
+bury real flakes. Surfacing `undetermined` as its own finding tells the user to
+gather a second observation, which is the correct next step, and the policy flag
+still lets a team opt into a side deliberately with the choice printed.
+
+Output is line oriented plain text, not JSON or a rich table. The alternative
+was structured output for machine parsing. Plain deterministic lines were chosen
+because the primary consumer is a human reading a git diff between two runs, and
+stable one record per line output makes that diff meaningful. A structured
+format can be layered on later without changing this decision.
