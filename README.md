@@ -391,3 +391,16 @@ The honest limits of the tool, kept and expanded:
   the `commit` and `attempt` markers.
 
 ## Design decisions
+
+The reasoning behind the choices that shaped the tool, including the alternative
+that was rejected.
+
+Same commit reruns are the unit of judgement. The alternative was to compare a
+test's outcome across different commits: if it passed on Monday and failed on
+Tuesday, call it flaky. That was rejected because the code changed between those
+commits, so a differing outcome is expected and proves nothing about
+nondeterminism. Holding the commit constant is the only way to isolate flakiness
+from real regressions, so the commit boundary is the unit and the tool never
+crosses it.
+
+Undetermined is the default for a single failing attempt. The alternative was to
