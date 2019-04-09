@@ -430,3 +430,15 @@ flakeledger/
   docs/
     assets/
       logo.svg                  the wordmark with the flake signature mark
+      flake-tax.svg             the ranked cost chart drawn from the sample run
+  samples/
+    README.md                   what each fixture proves and its expected labels
+    run-a1b2c3-attempt{1,2}.xml  commit a1b2c3 run twice, attribute style
+    run-d4e5f6-attempt{1,2}.xml  commit d4e5f6 run twice
+    run-b7c8d9-attempt{1,2}.xml  commit b7c8d9 run twice, the slow flake
+    run-99aa88-attempt1.xml     commit 99aa88, single green run, property style
+  src/
+    flakeledger/
+      __init__.py               package marker and version string
+      __main__.py               entry point for python -m flakeledger
+      cli.py                    argument parsing, subcommands, exit codes
