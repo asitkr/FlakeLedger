@@ -442,3 +442,16 @@ flakeledger/
       __init__.py               package marker and version string
       __main__.py               entry point for python -m flakeledger
       cli.py                    argument parsing, subcommands, exit codes
+      junit.py                  JUnit XML parsing into case results
+      runs.py                   grouping of case results by test and commit
+      classify.py               labelling into flake, genuine, stable, undetermined
+      cost.py                   the cost model and per test ranking
+      report.py                 line oriented deterministic rendering
+  tests/
+    test_junit.py               parser tests, both fixture styles and timing
+    test_classify.py            classification and single fail policy tests
+    test_cost.py                cost model, ranking, and CLI exit code tests
+```
+
+## Glossary
+
