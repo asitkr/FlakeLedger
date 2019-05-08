@@ -8,3 +8,4 @@ version = "1.0.1"
 description = "Quantify the compute and developer time cost of flaky tests from JUnit XML."
 readme = "README.md"
 requires-python = ">=3.11"
+license = { text = "MIT" }
