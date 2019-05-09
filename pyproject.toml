@@ -9,3 +9,5 @@ description = "Quantify the compute and developer time cost of flaky tests from 
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
+authors = [{ name = "the flakeledger authors" }]
+keywords = ["junit", "flaky-tests", "ci", "test-analytics"]
