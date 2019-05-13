@@ -12,3 +12,5 @@ license = { text = "MIT" }
 authors = [{ name = "the flakeledger authors" }]
 keywords = ["junit", "flaky-tests", "ci", "test-analytics"]
 
+[project.scripts]
+flakeledger = "flakeledger.cli:main"
