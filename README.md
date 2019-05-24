@@ -455,3 +455,59 @@ flakeledger/
 
 ## Glossary
 
+| Term | Meaning in this tool |
+|------|----------------------|
+| attempt | one rerun of a commit, numbered from 1 |
+| commit | the source revision under test, the boundary for judgement |
+| test_id | classname joined to name, the identity that groups reruns |
+| flake | a test that both passed and failed on one commit's reruns |
+| genuine failure | a test that failed on every attempt of a commit |
+| undetermined | a single failing attempt, no rerun to compare against |
+| flaky event | one commit on which a given test flaked, the unit of dev wait |
+| wasted compute | rerun runtime beyond the first attempt, attributed to a flake |
+| rate | an input price you supply, not a value the tool measures |
+
+## Verification
+
+The test suite is standard library `unittest`, no third party runner. Run it
+from the project root:
+
+```
+set PYTHONPATH=src
+python -m unittest discover -s tests -v
+```
+
+The last captured run reported 22 tests passing:
+
+```
+----------------------------------------------------------------------
+Ran 22 tests in 0.017s
+
+OK
+```
+
+The 0.017s figure is from an unspecified machine and is indicative of the suite
+being small and pure, not a benchmark. Coverage: `test_junit.py` checks both
+fixture styles, status detection, `time` parsing, and that many files parse
+sorted and complete at 25 rows; `test_classify.py` checks each label from the
+samples, all three single fail policies, rejection of an unknown policy, and
+sorted output; `test_cost.py` checks that only flakes are charged, a hand
+checked cost calculation for the coupon test, descending rank order, and every
+CLI exit code.
+
+## Roadmap
+
+Possible directions, without dates or promises:
+
+- An optional structured output mode for machine consumption, layered on top of
+  the plain text without replacing it.
+- Attributing whole job rerun cost when a job to test mapping is supplied,
+  lifting the compute figure above its current lower bound.
+- A diff subcommand that compares two runs directly instead of relying on a git
+  diff of committed reports.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
+
+<!-- draft note 137 -->
