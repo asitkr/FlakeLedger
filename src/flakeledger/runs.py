@@ -19,3 +19,9 @@ class TestOnCommit:
 
     test_id: str
     commit: str
+    attempts: list[CaseResult] = field(default_factory=list)
+
+    @property
+    def attempt_count(self) -> int:
+        return len(self.attempts)
+
