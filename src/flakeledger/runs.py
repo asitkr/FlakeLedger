@@ -32,3 +32,9 @@ class TestOnCommit:
 
     @property
     def passes(self) -> int:
+        return sum(1 for a in self.attempts if a.status == PASSED)
+
+    @property
+    def failures(self) -> int:
+        return sum(1 for a in self.attempts if a.status == FAILED)
+
