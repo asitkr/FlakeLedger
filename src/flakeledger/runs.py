@@ -64,3 +64,9 @@ def group_by_test_commit(results: list[CaseResult]) -> list[TestOnCommit]:
     for r in results:
         key = (r.test_id, r.commit)
         bucket = buckets.get(key)
+        if bucket is None:
+            bucket = TestOnCommit(test_id=r.test_id, commit=r.commit)
+            buckets[key] = bucket
+        bucket.attempts.append(r)
+
+    return [buckets[k] for k in sorted(buckets)]
