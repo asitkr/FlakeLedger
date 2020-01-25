@@ -57,3 +57,10 @@ def group_by_test_commit(results: list[CaseResult]) -> list[TestOnCommit]:
     """Collapse case results into one record per (test_id, commit).
 
     Output is sorted by (test_id, commit) so identical input produces
+    byte identical output downstream.
+    """
+
+    buckets: dict[tuple[str, str], TestOnCommit] = {}
+    for r in results:
+        key = (r.test_id, r.commit)
+        bucket = buckets.get(key)
