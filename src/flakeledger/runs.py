@@ -51,3 +51,9 @@ class TestOnCommit:
         if not self.attempts:
             return 0.0
         return self.total_time_seconds / len(self.attempts)
+
+
+def group_by_test_commit(results: list[CaseResult]) -> list[TestOnCommit]:
+    """Collapse case results into one record per (test_id, commit).
+
+    Output is sorted by (test_id, commit) so identical input produces
