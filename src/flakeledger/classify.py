@@ -26,3 +26,11 @@ Definitions used here, stated so the label is auditable:
     and callers who assume retries would have cleared it can set FLAKE. The
     chosen policy is recorded in the output.
 """
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+
+from flakeledger.runs import TestOnCommit
+
+FLAKE = "flake"
