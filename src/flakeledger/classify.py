@@ -34,3 +34,12 @@ from dataclasses import dataclass
 from flakeledger.runs import TestOnCommit
 
 FLAKE = "flake"
+GENUINE_FAILURE = "genuine_failure"
+STABLE = "stable"
+UNDETERMINED = "undetermined"
+
+# Policies for the single-attempt-failed ambiguous case.
+SINGLE_FAIL_UNDETERMINED = "undetermined"
+SINGLE_FAIL_GENUINE = "genuine"
+SINGLE_FAIL_FLAKE = "flake"
+
