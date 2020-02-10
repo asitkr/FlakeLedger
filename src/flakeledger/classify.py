@@ -51,3 +51,11 @@ _SINGLE_FAIL_POLICIES = (
 
 
 @dataclass(frozen=True)
+class Classification:
+    test_id: str
+    commit: str
+    label: str
+    attempt_count: int
+    passes: int
+    failures: int
+    skips: int
