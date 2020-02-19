@@ -59,3 +59,11 @@ class Classification:
     passes: int
     failures: int
     skips: int
+    reason: str
+
+
+def classify_one(
+    record: TestOnCommit,
+    single_fail_policy: str = SINGLE_FAIL_UNDETERMINED,
+) -> Classification:
+    passes = record.passes
