@@ -67,3 +67,12 @@ def classify_one(
     single_fail_policy: str = SINGLE_FAIL_UNDETERMINED,
 ) -> Classification:
     passes = record.passes
+    failures = record.failures
+    skips = record.skips
+    n = record.attempt_count
+
+    if failures == 0:
+        label = STABLE
+        reason = f"all {n} attempt(s) passed or skipped, no failures"
+    elif passes > 0 and failures > 0:
+        label = FLAKE
