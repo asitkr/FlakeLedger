@@ -25,3 +25,11 @@ Two costs are attributed to a flaky test:
     `dev_rate_per_minute`. Both numbers are inputs.
 
 All rates carry units in their names. Nothing is hardcoded inside the
+formula: change the rates and every number moves.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+
+from flakeledger.classify import FLAKE, Classification
