@@ -50,3 +50,11 @@ class Rates:
     dev_wait_minutes_per_flaky_event: float = DEFAULT_DEV_WAIT_MINUTES_PER_FLAKY_EVENT
 
 
+@dataclass(frozen=True)
+class TestCost:
+    test_id: str
+    flaky_events: int
+    wasted_compute_minutes: float
+    dev_wait_minutes: float
+    compute_cost: float
+    dev_cost: float
