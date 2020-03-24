@@ -66,3 +66,11 @@ class TestCost:
 
 def _extra_attempts(record: TestOnCommit) -> int:
     # Attempts beyond the first are reruns that a reliable test would avoid.
+    return max(record.attempt_count - 1, 0)
+
+
+def cost_for_flaky_tests(
+    records: list[TestOnCommit],
+    classifications: list[Classification],
+    rates: Rates,
+) -> list[TestCost]:
