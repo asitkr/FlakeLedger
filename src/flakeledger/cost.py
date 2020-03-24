@@ -74,3 +74,11 @@ def cost_for_flaky_tests(
     classifications: list[Classification],
     rates: Rates,
 ) -> list[TestCost]:
+    """Compute per-test cost, aggregated across every commit where it flaked.
+
+    Only tests classified FLAKE on at least one commit are charged. Output is
+    ranked by total cost descending, ties broken by test_id for determinism.
+    """
+
+    flake_keys = {
+        (c.test_id, c.commit) for c in classifications if c.label == FLAKE
