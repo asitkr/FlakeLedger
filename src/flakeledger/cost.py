@@ -58,3 +58,11 @@ class TestCost:
     dev_wait_minutes: float
     compute_cost: float
     dev_cost: float
+
+    @property
+    def total_cost(self) -> float:
+        return self.compute_cost + self.dev_cost
+
+
+def _extra_attempts(record: TestOnCommit) -> int:
+    # Attempts beyond the first are reruns that a reliable test would avoid.
