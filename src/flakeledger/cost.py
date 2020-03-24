@@ -42,3 +42,11 @@ DEFAULT_COMPUTE_RATE_PER_MINUTE = 0.008  # currency units per compute minute
 DEFAULT_DEV_RATE_PER_MINUTE = 1.50  # currency units per developer minute
 DEFAULT_DEV_WAIT_MINUTES_PER_FLAKY_EVENT = 15.0  # minutes lost per flaky event
 
+
+@dataclass(frozen=True)
+class Rates:
+    compute_rate_per_minute: float = DEFAULT_COMPUTE_RATE_PER_MINUTE
+    dev_rate_per_minute: float = DEFAULT_DEV_RATE_PER_MINUTE
+    dev_wait_minutes_per_flaky_event: float = DEFAULT_DEV_WAIT_MINUTES_PER_FLAKY_EVENT
+
+
