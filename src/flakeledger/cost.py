@@ -90,3 +90,11 @@ def cost_for_flaky_tests(
         record = record_by_key[(test_id, commit)]
         extra = _extra_attempts(record)
         wasted_minutes = (record.mean_time_seconds / 60.0) * extra
+
+        slot = agg.setdefault(
+            test_id,
+            {"events": 0.0, "wasted_minutes": 0.0, "dev_minutes": 0.0},
+        )
+        slot["events"] += 1
+        slot["wasted_minutes"] += wasted_minutes
+        slot["dev_minutes"] += rates.dev_wait_minutes_per_flaky_event
