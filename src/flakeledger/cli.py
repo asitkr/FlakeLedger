@@ -65,3 +65,19 @@ def _add_input_arg(sub: argparse.ArgumentParser) -> None:
         nargs="+",
         help="JUnit XML files or directories containing them",
     )
+
+
+def _add_policy_arg(sub: argparse.ArgumentParser) -> None:
+    sub.add_argument(
+        "--single-fail-policy",
+        choices=[
+            SINGLE_FAIL_UNDETERMINED,
+            SINGLE_FAIL_GENUINE,
+            SINGLE_FAIL_FLAKE,
+        ],
+        default=SINGLE_FAIL_UNDETERMINED,
+        help=(
+            "how to label a test that failed on its only attempt for a "
+            "commit (default: undetermined, which refuses to guess)"
+        ),
+    )
