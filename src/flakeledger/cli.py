@@ -81,3 +81,19 @@ def _add_policy_arg(sub: argparse.ArgumentParser) -> None:
             "commit (default: undetermined, which refuses to guess)"
         ),
     )
+
+
+def _build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="flakeledger",
+        description="Quantify the cost of flaky tests from JUnit XML results.",
+    )
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    p_ingest = sub.add_parser("ingest", help="parse JUnit XML and list cases")
+    _add_input_arg(p_ingest)
+
+    p_classify = sub.add_parser(
+        "classify", help="label tests as flake, genuine, stable, undetermined"
+    )
+    _add_input_arg(p_classify)
