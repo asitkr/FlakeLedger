@@ -49,3 +49,19 @@ def _collect_xml(paths: list[str]) -> list[Path]:
 
     out: list[Path] = []
     for raw in paths:
+        p = Path(raw)
+        if p.is_dir():
+            out.extend(sorted(p.glob("*.xml")))
+        elif p.is_file():
+            out.append(p)
+        # Nonexistent paths are ignored here; the caller reports the empty set
+        # as a usage error rather than crashing on a missing file.
+    return out
+
+
+def _add_input_arg(sub: argparse.ArgumentParser) -> None:
+    sub.add_argument(
+        "inputs",
+        nargs="+",
+        help="JUnit XML files or directories containing them",
+    )
