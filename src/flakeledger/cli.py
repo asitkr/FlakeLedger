@@ -97,3 +97,19 @@ def _build_parser() -> argparse.ArgumentParser:
         "classify", help="label tests as flake, genuine, stable, undetermined"
     )
     _add_input_arg(p_classify)
+    _add_policy_arg(p_classify)
+
+    p_cost = sub.add_parser("cost", help="rank flaky tests by attributed cost")
+    _add_input_arg(p_cost)
+    _add_policy_arg(p_cost)
+    p_cost.add_argument(
+        "--compute-rate-per-minute",
+        type=float,
+        default=DEFAULT_COMPUTE_RATE_PER_MINUTE,
+        help=(
+            "cost of one compute minute of CI, in the chosen currency "
+            f"(default {DEFAULT_COMPUTE_RATE_PER_MINUTE}, a placeholder)"
+        ),
+    )
+    p_cost.add_argument(
+        "--dev-rate-per-minute",
