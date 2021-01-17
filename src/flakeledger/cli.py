@@ -113,3 +113,19 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     p_cost.add_argument(
         "--dev-rate-per-minute",
+        type=float,
+        default=DEFAULT_DEV_RATE_PER_MINUTE,
+        help=(
+            "cost of one developer minute, in the chosen currency "
+            f"(default {DEFAULT_DEV_RATE_PER_MINUTE}, a placeholder)"
+        ),
+    )
+    p_cost.add_argument(
+        "--dev-wait-minutes-per-flaky-event",
+        type=float,
+        default=DEFAULT_DEV_WAIT_MINUTES_PER_FLAKY_EVENT,
+        help=(
+            "developer minutes lost per flaky event "
+            f"(default {DEFAULT_DEV_WAIT_MINUTES_PER_FLAKY_EVENT}, a placeholder)"
+        ),
+    )
