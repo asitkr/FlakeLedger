@@ -129,3 +129,19 @@ def _build_parser() -> argparse.ArgumentParser:
             f"(default {DEFAULT_DEV_WAIT_MINUTES_PER_FLAKY_EVENT}, a placeholder)"
         ),
     )
+    p_cost.add_argument(
+        "--currency",
+        default="USD",
+        help="currency label to print next to figures (default USD)",
+    )
+
+    sub.add_parser("version", help="print the version and exit")
+    return parser
+
+
+def _load(inputs: list[str]):
+    files = _collect_xml(inputs)
+    if not files:
+        return None, None, "no XML files found in the given inputs"
+    results, warnings = parse_paths([str(f) for f in files])
+    return results, warnings, None
