@@ -145,3 +145,19 @@ def _load(inputs: list[str]):
         return None, None, "no XML files found in the given inputs"
     results, warnings = parse_paths([str(f) for f in files])
     return results, warnings, None
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = _build_parser()
+    args = parser.parse_args(argv)
+
+    if args.command == "version":
+        sys.stdout.write(f"flakeledger {__version__}\n")
+        return EXIT_CLEAN
+
+    results, warnings, err = _load(args.inputs)
+    if err is not None:
+        sys.stderr.write(f"error: {err}\n")
+        return EXIT_USAGE
+
+    if args.command == "ingest":
