@@ -15,3 +15,7 @@ reads run identity.
   Commit a1b2c3, run twice. `test_apply_coupon` fails on attempt 1 and passes
   on attempt 2: a flake, because the code did not change between attempts.
   `test_pdf_header` fails on both attempts: a genuine failure.
+
+- `run-d4e5f6-attempt1.xml` and `run-d4e5f6-attempt2.xml`
+  Commit d4e5f6, run twice. Same pattern: `test_apply_coupon` flakes again
+  (its second flaky event), `test_pdf_header` fails on both attempts again.
