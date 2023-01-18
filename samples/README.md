@@ -24,3 +24,7 @@ reads run identity.
   Commit b7c8d9, run twice. `test_replica_catchup` fails then passes: a flake.
   Its runtime is roughly 4.5s, much longer than the coupon test, which is why
   it dominates the wasted compute figure.
+
+- `run-99aa88-attempt1.xml`
+  Commit 99aa88, run once, all green. Confirms that stable tests are never
+  charged and that the single-attempt path with no failure is not a finding.
