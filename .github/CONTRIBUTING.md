@@ -11,3 +11,6 @@ reads JUnit XML files and never talks to a CI system.
 python -m compileall -q src
 python -m pytest -q
 PYTHONPATH=src python -m flakeledger --help
+```
+
+## Before you open a pull request
