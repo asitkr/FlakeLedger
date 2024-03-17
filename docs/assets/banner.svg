@@ -9,3 +9,7 @@
       <stop offset="1" stop-color="#2e8f84"/>
     </linearGradient>
   </defs>
+  <rect width="960" height="260" fill="url(#bg)"/>
+  <g stroke="#1d2a33" stroke-width="1">
+    <path d="M0 65 H960 M0 130 H960 M0 195 H960 M240 0 V260 M480 0 V260 M720 0 V260"/>
+  </g>
