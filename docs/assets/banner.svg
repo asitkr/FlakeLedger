@@ -25,3 +25,7 @@
     <rect x="230" y="4" width="120" height="64" rx="8" fill="#14232a" stroke="#2e5468"/>
     <text x="290" y="30" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#8fb0b8" text-anchor="middle">flake tax</text>
     <text x="290" y="54" font-family="Consolas, Menlo, monospace" font-size="15" fill="#d7ecef" text-anchor="middle">18m / week</text>
+  </g>
+  <g transform="translate(560 60)">
+    <text x="0" y="0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#7d9aa2">classification</text>
+    <text x="0" y="24" font-family="Consolas, Menlo, monospace" font-size="14" fill="#dbeaee">flaky | broken | undetermined</text>
