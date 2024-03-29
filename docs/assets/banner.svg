@@ -17,3 +17,7 @@
   <text x="48" y="122" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#8fb0b8">one test, many runs: flaky or broken, with the retry cost attached</text>
   <g transform="translate(48 152)">
     <g font-family="Consolas, Menlo, monospace" font-size="12">
+      <text x="0" y="12" fill="#9fb8c0">run 1</text><rect x="64" y="0" width="26" height="18" rx="4" fill="#2a1d20" stroke="#6b3a40"/><text x="77" y="13" fill="#e0a3a3" text-anchor="middle">F</text>
+      <text x="0" y="40" fill="#9fb8c0">run 2</text><rect x="64" y="28" width="26" height="18" rx="4" fill="#1d2a22" stroke="#35604a"/><text x="77" y="41" fill="#a9d29b" text-anchor="middle">P</text>
+      <text x="0" y="68" fill="#9fb8c0">run 3</text><rect x="64" y="56" width="26" height="18" rx="4" fill="#2a1d20" stroke="#6b3a40"/><text x="77" y="69" fill="#e0a3a3" text-anchor="middle">F</text>
+      <text x="120" y="40" fill="#3fb6a8">= flaky</text>
