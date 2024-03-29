@@ -21,3 +21,7 @@
       <text x="0" y="40" fill="#9fb8c0">run 2</text><rect x="64" y="28" width="26" height="18" rx="4" fill="#1d2a22" stroke="#35604a"/><text x="77" y="41" fill="#a9d29b" text-anchor="middle">P</text>
       <text x="0" y="68" fill="#9fb8c0">run 3</text><rect x="64" y="56" width="26" height="18" rx="4" fill="#2a1d20" stroke="#6b3a40"/><text x="77" y="69" fill="#e0a3a3" text-anchor="middle">F</text>
       <text x="120" y="40" fill="#3fb6a8">= flaky</text>
+    </g>
+    <rect x="230" y="4" width="120" height="64" rx="8" fill="#14232a" stroke="#2e5468"/>
+    <text x="290" y="30" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#8fb0b8" text-anchor="middle">flake tax</text>
+    <text x="290" y="54" font-family="Consolas, Menlo, monospace" font-size="15" fill="#d7ecef" text-anchor="middle">18m / week</text>
