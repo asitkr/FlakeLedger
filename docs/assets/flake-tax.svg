@@ -42,3 +42,8 @@
   <text x="428" y="157" font-size="12" fill="#1f2933">22.50 USD</text>
 
   <!-- Axis line and ticks along the bottom of the plot. -->
+  <line x1="250" y1="200" x2="590" y2="200" stroke="#1f2933" stroke-width="1"/>
+  <!-- 0 -->
+  <line x1="250" y1="200" x2="250" y2="206" stroke="#1f2933" stroke-width="1"/>
+  <text x="250" y="222" font-size="11" text-anchor="middle" fill="#1f2933">0</text>
+  <!-- 15 USD at 250 + 15*7.5555 = 363.3 -->
