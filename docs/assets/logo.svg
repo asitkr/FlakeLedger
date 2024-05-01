@@ -5,3 +5,8 @@
   boundary of the compound name. The amber accent (#b45309) fills exactly one
   cell of the mark: the failing attempt that, sitting next to a passing
   attempt of the same commit, is the literal signature of a flake.
+  The mark is a real diagram of the core data structure: one commit, two
+  attempts, differing outcomes. Two 12px cells on a whole-pixel grid.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 96" role="img"
+     aria-labelledby="title desc" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif">
