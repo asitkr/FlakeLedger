@@ -70,3 +70,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `classify` subcommand and the first report shape.
 
 ## [0.2.0] - 2019-09-17
+
+### Added
+
+- Multi-run model: the same test across many files is one ledger row.
+- Outcome comparison between attempts of the same run.
+
+## [0.1.0] - 2018-05-08
+
+### Added
+
+- First release: single-run parser and a line oriented report with a findings
+  total.
+
+<!-- draft note 1232 -->
