@@ -83,4 +83,4 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - First release: single-run parser and a line oriented report with a findings
   total.
 
-<!-- draft note 1232 -->
+<!-- draft note 1235 -->
