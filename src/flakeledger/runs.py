@@ -83,3 +83,6 @@ def attempts_per_commit(results: list[CaseResult]) -> dict[str, int]:
     for r in results:
         if r.attempt > highest[r.commit]:
             highest[r.commit] = r.attempt
+    return dict(sorted(highest.items()))
+
+// draft note 1234
