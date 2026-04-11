@@ -5,3 +5,5 @@
   <testcase classname="tests.auth.test_login" name="test_valid_password" time="0.099"/>
   <testcase classname="tests.reports.test_export" name="test_pdf_header" time="1.915">
     <failure message="KeyError: 'title'">missing template key</failure>
+  </testcase>
+</testsuite>
