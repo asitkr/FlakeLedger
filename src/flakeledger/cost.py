@@ -115,3 +115,4 @@ def cost_for_flaky_tests(
         )
 
     costs.sort(key=lambda c: (-round(c.total_cost, 6), c.test_id))
+    return costs
