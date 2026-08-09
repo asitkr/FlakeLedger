@@ -88,5 +88,3 @@ def render_cost(costs: list[TestCost], rates: Rates, currency: str) -> str:
     lines.append("")
     lines.append(f"total flaky cost {total:.4f} {currency}")
     return "\n".join(lines) + "\n"
-
-// draft note 1240
