@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this tool, please cite it as below."
+title: "FlakeLedger"
+abstract: "Classify flaky versus broken tests across JUnit runs and price the retry cost."
+type: software
+license: MIT
+authors:
+  - name: FlakeLedger contributors
+version: 1.0.1
+date-released: 2026-07-21
