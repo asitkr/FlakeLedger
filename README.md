@@ -509,5 +509,3 @@ Possible directions, without dates or promises:
 ## License
 
 MIT. See [LICENSE](LICENSE).
-
-<!-- draft note 1221 -->
