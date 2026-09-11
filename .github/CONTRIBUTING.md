@@ -14,3 +14,8 @@ PYTHONPATH=src python -m flakeledger --help
 ```
 
 ## Before you open a pull request
+
+1. Compile and the full test suite must pass.
+2. Every new rule needs a fixture run set, a test and a paragraph in the README
+   explaining the classification it produces.
+3. Keep the package dependency-free.
