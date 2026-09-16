@@ -10,5 +10,3 @@ lint:
 
 smoke:
 	PYTHONPATH=src $(PY) -m flakeledger --help
-
-<!-- draft note 1227 -->
