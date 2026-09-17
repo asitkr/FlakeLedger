@@ -22,5 +22,3 @@ PYTHONPATH=src python -m {module} --help
 
 - OS:
 - Python version (`python --version`):
-
-<!-- draft note 1226 -->
