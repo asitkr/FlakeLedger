@@ -117,6 +117,9 @@ accepts the three rate flags and a `--currency` label described next.
 
 ## The cost model
 
+Cost is attributed per test: retry minutes plus the runner minutes
+spent re-running it. Ranking by cost rather than by failure count is what makes the report actionable.
+
 Every rate is an input, not a fact. The defaults exist so a run produces
 numbers, but they are placeholders for values you should measure yourself.
 Nothing here is a universal truth.
