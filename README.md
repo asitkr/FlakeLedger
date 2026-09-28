@@ -365,6 +365,9 @@ for `classify`), so a diff shows only real changes, not reordering noise.
 
 ## Limitations
 
+The ledger only knows what the XML files say. Suites that rewrite test
+ids between runs defeat the cross-run comparison, and that is documented rather than papered over.
+
 The honest limits of the tool, kept and expanded:
 
 - The cost is an estimate built on declared rates, not a measurement of money
