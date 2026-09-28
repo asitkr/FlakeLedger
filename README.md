@@ -35,6 +35,9 @@ feeling and becomes a line in a ranked table.
 
 ## How it decides what is a flake
 
+The decision compares outcomes of the same test
+across runs, not within one run. A test that fails once and passes later is a flake only when the same test id appears in both states; anything less is left alone.
+
 The unit of judgement is one test on one commit, across every rerun attempt of
 that commit. Because the code does not change between reruns of the same commit,
 a test that both passes and fails there cannot be blaming the code: something
