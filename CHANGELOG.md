@@ -10,6 +10,31 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Rule tables are being reorganised for the next patch.
 - The cost report is being reviewed for the next minor.
 
+## [5.0.0] - 2026-09-16
+
+### Added
+
+- `report --summary` prints only the per-state counts, for CI logs.
+
+## [4.1.0] - 2026-09-15
+
+### Added
+
+- A per-suite view grouping the ledger by suite name.
+
+## [3.1.0] - 2026-08-29
+
+### Changed
+
+- Quarantine suggestions are ranked by cost, matching the report order.
+
+## [2.0.0] - 2026-08-05
+
+### Added
+
+- The report carries a `runs` block with the window and run count.
+- Fixtures for the shared-timestamp tie.
+
 ## [1.0.1] - 2026-07-21
 
 ### Fixed
