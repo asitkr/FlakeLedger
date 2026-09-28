@@ -58,6 +58,9 @@ design decisions section explains why that boundary is the unit.
 
 ## The undetermined case and why it refuses to guess
 
+Undetermined is a real answer:
+with too few runs, or with all attempts failing, the ledger has no evidence either way. Guessing there is how a flaky label gets attached to a genuinely broken test.
+
 The hard case is a test that failed and was never re-run for that commit. With a
 single observation there is no second attempt to compare against, so the data
 cannot distinguish a flake from a genuine failure. A tool that guessed here
